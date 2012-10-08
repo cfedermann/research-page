@@ -1,7 +1,12 @@
 #!/usr/bin/env python2.7
+"""
+Project: https://github.com/cfedermann/research-page
+ Author: Christian Federmann <cfedermann@dfki.de>
+"""
 import sys
 from pybtex.database.input import bibtex
 
+# BibTex-to-text mapping; non-exhaustive but complete wrt. bibliography.
 TEX2TEXT = {
  '\\`{a}': '&agrave;',
  '\\"o': '&ouml;',
@@ -13,13 +18,15 @@ TEX2TEXT = {
  '}': '',
 }
 
+# Template for accepted publications.
 ACCEPTED_TEMPLATE = '''                <tr>
                   <td>{0[number]}</td>
                   <td>
                     <p>{0[entry].fields[title]} <span class="label  label-important">{0[entry].fields[note]}</span><br/><strong><small>{0[authors]}</small></strong><br/><small>{0[entry].fields[booktitle]}, {0[entry].fields[month]} {0[entry].fields[year]}</small></p>
                   </td>
                 </tr>'''
-                
+
+# Template for published publications.                
 PUBLISHED_TEMPLATE = '''                <tr>
                   <td>{0[number]}</td>
                   <td>
@@ -32,17 +39,17 @@ if __name__ == "__main__":
         print "\n\tusage: {0} <bib-file>\n".format(sys.argv[0])
         sys.exit(-1)
     
-    parser = bibtex.Parser()
-    bib_data = parser.parse_file(sys.argv[1])
+    PARSER = bibtex.Parser()
+    BIB_DATA = PARSER.parse_file(sys.argv[1])
     
     
-    _keys = bib_data.entries.keys()
-    _keys.reverse()
-    _number = len(_keys)
+    KEYS = BIB_DATA.entries.keys()
+    KEYS.reverse()
+    NUMBER = len(KEYS)
     
-    for _key in _keys:
-        _entry = bib_data.entries[_key]
-        _data = {'number': _number, 'entry': _entry}
+    for _key in KEYS:
+        _entry = BIB_DATA.entries[_key]
+        _data = {'number': NUMBER, 'entry': _entry}
         _authors = []
         for person in _entry.persons['author']:
             _authors.append(u"{0} {1}".format(u" ".join(person.first()),
@@ -56,11 +63,10 @@ if __name__ == "__main__":
         
         try:
             formatted = template.format(_data)
-            print reduce(lambda x, y: x.replace(y, TEX2TEXT[y]), TEX2TEXT, formatted)
+            print reduce(lambda x, y: x.replace(y, TEX2TEXT[y]), TEX2TEXT,
+              formatted)
         
         except KeyError, msg:
             print "Key error {0} for entry {1}".format(msg, _key)
         
-#        print dir(bib_data.entries[_key]), _authors
-#        print _data
-        _number -= 1
+        NUMBER -= 1
