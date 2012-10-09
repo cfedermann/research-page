@@ -62,9 +62,9 @@ if __name__ == "__main__":
             template = ACCEPTED_TEMPLATE
         
         try:
-            formatted = template.format(_data)
-            print reduce(lambda x, y: x.replace(y, TEX2TEXT[y]), TEX2TEXT,
-              formatted)
+            formatted = template.format(_data).replace('&', '&amp;')
+            print reduce(lambda x, y: x.replace(y, TEX2TEXT[y]),
+              TEX2TEXT, formatted)
         
         except KeyError, msg:
             print "Key error {0} for entry {1}".format(msg, _key)
