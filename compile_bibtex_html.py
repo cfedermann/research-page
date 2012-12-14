@@ -38,7 +38,7 @@ PUBLISHED_TEMPLATE = '''                <tr>
 BOOK_TEMPLATE = '''                <tr>
                   <td>{0[number]}</td>
                   <td>
-                    <p>{0[entry].fields[title]}<br/><strong><small>{0[authors]}</small></strong><br/><small>Book, {0[entry].fields[address]}, {0[entry].fields[month]} {0[entry].fields[year]}</small><br/><span class="label">URL</span> <small><a href="{0[entry].fields[url]}">{0[entry].fields[url]}</a></small></p>
+                    <p>{0[entry].fields[title]}<br/><strong><small>Editors: {0[authors]}</small></strong><br/><small>{0[entry].fields[address]}, {0[entry].fields[month]} {0[entry].fields[year]}</small><br/><span class="label">URL</span> <small><a href="{0[entry].fields[url]}">{0[entry].fields[url]}</a></small></p>
                   </td>
                 </tr>'''
 
