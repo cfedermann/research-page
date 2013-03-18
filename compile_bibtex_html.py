@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 """
 Project: https://github.com/cfedermann/research-page
- Author: Christian Federmann <cfedermann@dfki.de>
+ Author: Christian Federmann <cfedermann@gmail.com>
 """
 import sys
 from pybtex.database.input import bibtex
