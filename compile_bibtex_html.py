@@ -12,6 +12,15 @@ TEX2TEXT = {
  '\\"o': '&ouml;',
  '\\"a': '&auml;',
  '\\"u': '&uuml;',
+ '\\"{o}': '&ouml;',
+ '\\"{a}': '&auml;',
+ '\\"{u}': '&uuml;',
+ '\\"O': '&Ouml;',
+ '\\"A': '&Auml;',
+ '\\"U': '&Uuml;',
+ '\\"{O}': '&Ouml;',
+ '\\"{A}': '&Auml;',
+ '\\"{U}': '&Uuml;',
  "\\'{c}": '&cacute;',
  "\\'{e}": '&eacute;',
  '{': '',
@@ -26,11 +35,19 @@ ACCEPTED_TEMPLATE = '''                <tr>
                   </td>
                 </tr>'''
 
-# Template for published publications.                
+# Template for published publications.
 PUBLISHED_TEMPLATE = '''                <tr>
                   <td>{0[number]}</td>
                   <td>
                     <p>{0[entry].fields[title]}<br/><strong><small>{0[authors]}</small></strong><br/><small>{0[entry].fields[booktitle]}, {0[entry].fields[address]}, {0[entry].fields[month]} {0[entry].fields[year]}</small><br/><span class="label">URL</span> <small><a href="{0[entry].fields[url]}">{0[entry].fields[url]}</a></small></p>
+                  </td>
+                </tr>'''
+
+# Template for book publications.
+BOOK_TEMPLATE = '''                <tr>
+                  <td>{0[number]}</td>
+                  <td>
+                    <p>{0[entry].fields[title]}<br/><strong><small>Editors: {0[authors]}</small></strong><br/><small>{0[entry].fields[address]}, {0[entry].fields[month]} {0[entry].fields[year]}</small><br/><span class="label">URL</span> <small><a href="{0[entry].fields[url]}">{0[entry].fields[url]}</a></small></p>
                   </td>
                 </tr>'''
 
@@ -49,9 +66,17 @@ if __name__ == "__main__":
     
     for _key in KEYS:
         _entry = BIB_DATA.entries[_key]
+        
+        if _entry.persons.has_key('author'):
+            _author_data = _entry.persons['author']
+        elif _entry.persons.has_key('editor'):
+            _author_data = _entry.persons['editor']
+        else:
+            _author_data = []
+        
         _data = {'number': NUMBER, 'entry': _entry}
         _authors = []
-        for person in _entry.persons['author']:
+        for person in _author_data:
             _authors.append(u"{0} {1}".format(u" ".join(person.first()),
               u" ".join(person.last())))
               
@@ -60,6 +85,8 @@ if __name__ == "__main__":
         template = PUBLISHED_TEMPLATE 
         if _entry.fields.has_key('note'):
             template = ACCEPTED_TEMPLATE
+        elif _entry.persons.has_key('editor'):
+            template = BOOK_TEMPLATE
         
         try:
             formatted = template.format(_data).replace('&', '&amp;')
