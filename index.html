@@ -12,7 +12,7 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
     <!-- cfedermann: create local version of TTF font! -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -31,11 +31,11 @@ body {
   padding:5px;
 }
 
-.black { background-color:dimgray;color:white; }
+.black { background-color:black;color:white; }
 .black a { color:darkgray; } /*black*/
 
-.blue { background-color:darkblue;color:white; }
-.blue a { color:dodgerblue; }
+.blue { background-color:dodgerblue;color:white; }
+.blue a { color:darkblue; }
 
 .green { background-color:green;color:white; }
 .green a { color:greenyellow; }
@@ -50,7 +50,7 @@ body {
 .red a { color:red;}
 
 .yellow { background-color:yellow;color:black; }
-.yellow a { color:dodgerblue; }
+.yellow a { color:darkorange; }
 
 .no-border { border: 0px; }
 .no-margin { margin:0px; }
@@ -75,7 +75,7 @@ body {
 
       <section id="about" style="padding-top: 60px;">
       <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close">&times;</button>
         <strong>Please note:</strong> new phone number +49 681 302 4680, new office coordinates Campus C7 <small>2</small> &mdash; Room 2.04.
       </div>
 
@@ -87,20 +87,19 @@ body {
       <section id="tiles">
       <div class="row-fluid">
         <div class="span2 no-border no-margin no-padding">
-          <div class="span12 green" style="margin-left:2px;padding-bottom:14px;">
+          <div class="span12 blue" style="margin-left:2px;padding-bottom:14px;">
             <h3>cfedermann</h3>
 
             <p><i class="icon-hand-right icon-white"></i> Campus D7 <small>2</small><br/><i class="icon-home icon-white"></i> Room 2.04</p>
           </div>
 
-          <div class="span12 no-margin"><img src="images/chris_500x500.png" width="130" alt="Photo" /></div>
+          <div class="span12 no-margin"><img src="images/gravatar.png" width="130" alt="Photo" /></div>
         </div>
 
-        <div class="span6 yellow" style="min-height:160px;">
+        <div class="span6 green" style="min-height:160px;">
           <p class="lead">I am a research fellow at the <a href="http://www.coli.uni-saarland.de/groups/MP/page.php?id=index">Computational Linguistics Group</a> at <a href="http://www.uni-saarland.de/">Saarland University</a>.</p>
 
-          <p>I have studied <a href="http://www.cs.uni-saarland.de/">computer science</a> and <a href="http://www.coli.uni-saarland.de/">computational linguistics</a> at Saarland University
-and submitted my diploma thesis in July 2007.</p>
+          <p>I have studied <a href="http://www.cs.uni-saarland.de/">computer science</a> and <a href="http://www.coli.uni-saarland.de/">computational linguistics</a> at Saarland University and submitted my diploma thesis in July 2007.</p>
 
           <p>From July 2007&mdash;April 2013, I worked as a researcher at the <a href="http://www.dfki.de/lt/">Language Technology Lab</a> at <abbr title="German Research Center for Artificial Intelligence">DFKI</abbr>. My research mostly focused on machine translation and evaluation of machine-translated text, as well as building clever information extraction tools.</p>
 
@@ -108,13 +107,13 @@ and submitted my diploma thesis in July 2007.</p>
         </div>
 
         <div class="span3 no-border no-margin no-padding">
-          <div class="span12 orange">
+          <div class="span12 yellow">
             <h3>Teaching</h3>
 
-            <p>In summer 2013, I co-teach the M.Sc. <span style="display:inline-block"><i class="icon-book icon-white"></i> <a href="#">Language Technology II</a></span> course together with <span style="display:inline-block"><i class="icon-user icon-white"></i> <a href="http://www.stanford.edu/~mjkay/">Martin Kay</a></span> and <span style="display:inline-block;"><i class="icon-user icon-white"></i> <a href="http://www.coli.uni-saarland.de/~magda/">Magdalena Wolska</a></span>.</p>
+            <p>In summer 2013, I co-teach the M.Sc. <span style="display:inline-block"><i class="icon-book icon-black"></i> <a href="#">Language Technology II</a></span> course together with <span style="display:inline-block"><i class="icon-user icon-black"></i> <a href="http://www.stanford.edu/~mjkay/">Martin Kay</a></span> and <span style="display:inline-block;"><i class="icon-user icon-black"></i> <a href="http://www.coli.uni-saarland.de/~magda/">Magdalena Wolska</a></span>.</p>
           </div>
 
-          <div class="span12 red" style="margin-left:0px;margin-top:9px;">
+          <div class="span12 orange" style="margin-left:0px;margin-top:9px;">
             <p><i class="icon-calendar icon-white"></i> Next meeting: April 16, 2013<br/><i class="icon-info-sign icon-white"></i> Campus C7 <small>4</small> &mdash; Room 1.17<br/>  Part of the <a href="http://www.coli.uni-saarland.de/kvv/detailpage.php?id=1968">semester introductory meeting</a> starting at 12:00 PM.</p>
           </div>
         </div>
@@ -130,19 +129,19 @@ and submitted my diploma thesis in July 2007.</p>
       </div><!-- <div class="row-fluid"> -->
 
       <div class="row-fluid">
-        <div class="span4 blue" style="min-height:160px;">
+        <div class="span4 black" style="min-height:160px;">
           <h3>39 Publications</h3>
 
-          <p>See my publication/citation overview on <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a>. A list of all publications is available for download in <a href="bibliography.bib">BibTex format</a>.<!-- Click here to show a table with all publications below. --></p>
+          <p>See my publication/citation overview on <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a>. A list of all publications is available for download in <a href="bibliography.bib">BibTex format</a>. You can show a table with all publications by <a href="javascript:showPublications();">clicking here</a>.</p>
         </div>
 
-        <div class="span3 black" style="min-height:160px;">
+        <div class="span3 purple" style="min-height:160px;">
           <h3>CV</h3>
 
           <p>My Curriculum Vitae is <a href="mailto:cfedermann@gmail.com">available on request</a> as PDF or DOC.</p>
         </div>
 
-        <div class="span4 purple" style="min-height:160px;">
+        <div class="span4 red" style="min-height:160px;">
           <h3>Contact Details</h3>
 
           <address>
@@ -154,12 +153,12 @@ and submitted my diploma thesis in July 2007.</p>
         </div>
       </div><!-- <div class="row-fluid"> -->
 
-      <div class="row-fluid" style="display:none;">
+      <div class="row-fluid" style="display:none;" id="publications">
         <div class="span11">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>No.</th><th>Title <button type="button" class="close" data-dismiss="alert">&times;</button></th>
+                  <th>No.</th><th>Title <button type="button" class="close">close &times;</button></th>
                 </tr>
               </thead>
               <tbody>
@@ -412,38 +411,31 @@ and submitted my diploma thesis in July 2007.</p>
 
     </div>
 
-    <!-- cfedermann: this needs to be fixed... -->
-
-<!--    <http://script src="http://www.dfki.de/~cfedermann/jquery-1.8.2.min.js"></script>-->
-<!--    <script src="http://www.dfki.de/~cfedermann/bootstrap-alert.js"></script>-->
-<!--    <script>-->
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>-->
+    <script>
     <!--
 
-    function setActive(id) {
-      var menu = $("div.navbar div div ul li");
-      menu.each(function(index) {
-        if (index == id) {
-          $(this).addClass('active');
-        }
-        else {
-          $(this).removeClass('active');
-        }
-      });
+    function showPublications() {
+      $("#publications").show();
     }
 
     function closeAlert() {
       $("section#about .alert").alert('close');
     }
 
-    $(document).ready(function(){
-      var menu = $("div.navbar div div ul li");
-      menu.each(function(index) {
-        $(this).click(function() {setActive(index)});
+    $(document).ready(function() {
+      $("#publications button").on("click", function(event) {
+        $("#publications").hide();
+      });
+
+      $("section#about .alert").on("click", function(event) {
+        closeAlert();
       });
     });
 
     //-->
-<!--    </script>-->
+    </script>
 
   </body>
 </html>
