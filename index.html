@@ -31,11 +31,11 @@ body {
   padding:5px;
 }
 
-.black { background-color:black;color:white; }
-.black a { color:red; }
+.black { background-color:dimgray;color:white; }
+.black a { color:darkgray; } /*black*/
 
-.blue { background-color:dodgerblue;color:white; }
-.blue a { color:gold; }
+.blue { background-color:darkblue;color:white; }
+.blue a { color:dodgerblue; }
 
 .green { background-color:green;color:white; }
 .green a { color:greenyellow; }
@@ -46,8 +46,8 @@ body {
 .purple { background-color:purple;color:white; }
 .purple a { color:mediumpurple; }
 
-.red { background-color:red;color:white; }
-.red a { color:gold;}
+.red { background-color:darkred;color:white; }
+.red a { color:red;}
 
 .yellow { background-color:yellow;color:black; }
 .yellow a { color:dodgerblue; }
@@ -59,6 +59,16 @@ body {
     </style>
 
   </head>
+
+<!-- color cycles:
+
+0) green, yellow, orange, red, purple, black, blue
+
+1) blue, green, yellow, orange, red, purple, black
+
+2) black, blue, green, yellow, orange, red, purple
+
+-->
 
   <body>
     <div class="container" style="padding-bottom:200px;">
@@ -77,7 +87,7 @@ body {
       <section id="tiles">
       <div class="row-fluid">
         <div class="span2 no-border no-margin no-padding">
-          <div class="span12 blue" style="margin-left:2px;padding-bottom:14px;">
+          <div class="span12 green" style="margin-left:2px;padding-bottom:14px;">
             <h3>cfedermann</h3>
 
             <p><i class="icon-hand-right icon-white"></i> Campus D7 <small>2</small><br/><i class="icon-home icon-white"></i> Room 2.04</p>
@@ -98,7 +108,7 @@ and submitted my diploma thesis in July 2007.</p>
         </div>
 
         <div class="span3 no-border no-margin no-padding">
-          <div class="span12 green">
+          <div class="span12 orange">
             <h3>Teaching</h3>
 
             <p>In summer 2013, I co-teach the M.Sc. <span style="display:inline-block"><i class="icon-book icon-white"></i> <a href="#">Language Technology II</a></span> course together with <span style="display:inline-block"><i class="icon-user icon-white"></i> <a href="http://www.stanford.edu/~mjkay/">Martin Kay</a></span> and <span style="display:inline-block;"><i class="icon-user icon-white"></i> <a href="http://www.coli.uni-saarland.de/~magda/">Magdalena Wolska</a></span>.</p>
@@ -120,19 +130,19 @@ and submitted my diploma thesis in July 2007.</p>
       </div><!-- <div class="row-fluid"> -->
 
       <div class="row-fluid">
-        <div class="span4 orange" style="min-height:160px;">
+        <div class="span4 blue" style="min-height:160px;">
           <h3>39 Publications</h3>
 
           <p>See my publication/citation overview on <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a>. A list of all publications is available for download in <a href="bibliography.bib">BibTex format</a>.<!-- Click here to show a table with all publications below. --></p>
         </div>
 
-        <div class="span3 purple" style="min-height:160px;">
+        <div class="span3 black" style="min-height:160px;">
           <h3>CV</h3>
 
           <p>My Curriculum Vitae is <a href="mailto:cfedermann@gmail.com">available on request</a> as PDF or DOC.</p>
         </div>
 
-        <div class="span4 black" style="min-height:160px;">
+        <div class="span4 purple" style="min-height:160px;">
           <h3>Contact Details</h3>
 
           <address>
@@ -144,7 +154,7 @@ and submitted my diploma thesis in July 2007.</p>
         </div>
       </div><!-- <div class="row-fluid"> -->
 
-      <div class="row-fluid">
+      <div class="row-fluid" style="display:none;">
         <div class="span11">
             <table class="table table-striped">
               <thead>
