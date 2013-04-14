@@ -31,7 +31,7 @@ body {
   padding:5px;
 }
 
-.black { background-color:black;color:white; }
+.black { background-color:black;color:white; } /*dimgray*/
 .black a { color:darkgray; } /*black*/
 
 .blue { background-color:dodgerblue;color:white; }
@@ -103,7 +103,7 @@ body {
 
           <p>From July 2007&mdash;April 2013, I worked as a researcher at the <a href="http://www.dfki.de/lt/">Language Technology Lab</a> at <abbr title="German Research Center for Artificial Intelligence">DFKI</abbr>. My research mostly focused on machine translation and evaluation of machine-translated text, as well as building clever information extraction tools.</p>
 
-          <p>My PhD project under the supervision of <a href="http://www.coli.uni-saarland.de/~hansu/">Prof. Dr. Hans Uszkoreit</a> is titled &laquo;A Machine Learning Framework  for System Combination Using Joint, Binarised Feature Vectors&raquo; and slated to be submitted in mid-2013.</p>
+          <p>My PhD project under the supervision of <span style="display:inline-block"><i class="icon-user icon-black"></i> <a href="http://www.coli.uni-saarland.de/~hansu/">Prof. Dr. Hans Uszkoreit</a></span> is titled &laquo;A Machine Learning Framework  for System Combination Using Joint, Binarised Feature Vectors&raquo; and slated to be submitted in mid-2013.</p>
         </div>
 
         <div class="span3 no-border no-margin no-padding">
@@ -132,7 +132,7 @@ body {
         <div class="span4 was-black tile" style="min-height:160px;">
           <h3>39 Publications</h3>
 
-          <p>See my publication/citation overview on <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a>. A list of all publications is available for download in <a href="bibliography.bib">BibTex format</a>. You can show a table with all publications by <a href="javascript:showPublications();">clicking here</a>.</p>
+          <p>See my publications/citations on <span style="display:inline-block"><i class="icon-search icon-white"></i> <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a></span>. A list of all publications is available for download in <span style="display:inline-block"><i class="icon-download icon-white"></i> <a href="bibliography.bib">BibTex format</a></span>. You can view a table with all publications by <a href="javascript:showPublications();">clicking here</a>.</p>
         </div>
 
         <div class="span3 was-purple tile" style="min-height:160px;">
@@ -433,13 +433,22 @@ body {
         closeAlert();
       });
 
-      // randomise tile colors;
-      var colors = ["blue","green","yellow","orange","red","purple","black"];
+      // Randomise tile colors and fix icon colors.
+      var colors = ["blue","green","yellow","orange","black","purple","red"];
+      var icons = ["white","white","black","white","white","white","white"];
       var tiles = $("#tiles .tile");
-      var startIndex = 0; //Math.floor(Math.random() * colors.length);
+      var startIndex = Math.floor(Math.random() * colors.length);
       tiles.each(function(index) {
         var pos = (startIndex+index) % colors.length;
         $(this).addClass(colors[pos]);
+        $(this).find("i[class^='icon-']").each(function(index) {
+          if (icons[pos] == 'white') {
+            $(this).removeClass('icon-black').addClass('icon-white');
+          }
+          else {
+            $(this).removeClass('icon-white').addClass('icon-black');
+          }
+        });
       });
     });
 
