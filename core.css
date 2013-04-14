@@ -29,11 +29,19 @@ body {
 .black { background-color:black;color:white; } /*dimgray*/
 .black a { color:darkgray; } /*black*/
 
-.blue { background-color:dodgerblue;color:white; }
-.blue a { color:darkblue; }
+.blue1 { background-color:dodgerblue;color:white; }
+.blue1 a { color:darkblue; }
+.blue2 { background-color:darkblue;color:white; }
+.blue2 a { color:lightskyblue; }
+.blue3 { background-color:royalblue;color:white; }
+.blue3 a { color:lightskyblue; }
 
-.green { background-color:green;color:white; }
-.green a { color:greenyellow; }
+.green1 { background-color:green; color:white; }
+.green1 a { color:greenyellow; }
+.green2 { background-color:yellowgreen; color:white; }
+.green2 a { color:darkgreen; }
+.green3 { background-color:limegreen; color:white; }
+.green3 a { color:greenyellow; }
 
 .orange { background-color:orange;color:white; }
 .orange a { color:yellow; }
