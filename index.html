@@ -20,7 +20,7 @@
     <div class="container" style="padding-bottom:200px;">
 
       <section id="about" style="padding-top: 60px;">
-      <div class="alert alert-info">
+      <div class="alert alert-info" style="display:none;">
         <button type="button" class="close">&times;</button>
         <strong>Please note:</strong> new phone number +49 681 302 4680, new office coordinates Campus C7 <small>2</small> &mdash; Room 2.04.
       </div>
@@ -361,6 +361,8 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script>
     <!--
+    var COLORS = ["blue","green","yellow","orange","black","purple","red"];
+    var ICONS = ["white","white","black","white","white","white","white"];
 
     function showPublications() {
       $("#publications").show();
@@ -368,6 +370,18 @@
 
     function closeAlert() {
       $("section#about .alert").alert('close');
+    }
+
+    function setTileColor(tile, colorIndex) {
+      tile.addClass(COLORS[colorIndex]);
+      tile.find("i[class^='icon-']").each(function(index) {
+        if (ICONS[colorIndex] == 'white') {
+          $(this).removeClass('icon-black').addClass('icon-white');
+        }
+        else {
+          $(this).removeClass('icon-white').addClass('icon-black');
+        }
+      });
     }
 
     $(document).ready(function() {
@@ -380,21 +394,12 @@
       });
 
       // Randomise tile colors and fix icon colors.
-      var colors = ["blue","green","yellow","orange","black","purple","red"];
-      var icons = ["white","white","black","white","white","white","white"];
       var tiles = $("#tiles .tile");
-      var startIndex = Math.floor(Math.random() * colors.length);
+
+      var startIndex = Math.floor(Math.random() * COLORS.length);
       tiles.each(function(index) {
-        var pos = (startIndex+index) % colors.length;
-        $(this).addClass(colors[pos]);
-        $(this).find("i[class^='icon-']").each(function(index) {
-          if (icons[pos] == 'white') {
-            $(this).removeClass('icon-black').addClass('icon-white');
-          }
-          else {
-            $(this).removeClass('icon-white').addClass('icon-black');
-          }
-        });
+        var colorIndex = (startIndex+index) % COLORS.length;
+        setTileColor($(this), colorIndex);
       });
     });
 
