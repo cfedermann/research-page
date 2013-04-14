@@ -36,7 +36,7 @@
           <div class="span12 blue1 tile" style="margin-left:2px;padding-bottom:14px;">
             <h3>cfedermann</h3>
 
-            <p><i class="icon-hand-right icon-white"></i> Campus C7 <small>2</small><br/><i class="icon-home icon-white"></i> Room 2.04</p>
+            <p><i class="icon-flag icon-white"></i> Campus C7 <small>2</small><br/><i class="icon-home icon-white"></i> Room 2.04</p>
           </div>
 
           <div class="span12 no-margin"><img src="images/gravatar.png" width="130" alt="Photo" /></div>
@@ -49,14 +49,14 @@
 
           <p>From July 2007&mdash;April 2013, I worked as a researcher at the <a href="http://www.dfki.de/lt/">Language Technology Lab</a> at <abbr title="German Research Center for Artificial Intelligence">DFKI</abbr>. My research mostly focused on machine translation and evaluation of machine-translated text, as well as building clever information extraction tools.</p>
 
-          <p>My PhD project under the supervision of <span style="display:inline-block"><i class="icon-user icon-black"></i> <a href="http://www.coli.uni-saarland.de/~hansu/">Prof. Dr. Hans Uszkoreit</a></span> is titled &laquo;A Machine Learning Framework  for System Combination Using Joint, Binarised Feature Vectors&raquo; and slated to be submitted in mid-2013.</p>
+          <p>My PhD project under the supervision of <span style="display:inline-block"><i class="icon-user icon-white"></i> <a href="http://www.coli.uni-saarland.de/~hansu/">Prof. Dr. Hans Uszkoreit</a></span> is titled &laquo;A Machine Learning Framework  for System Combination Using Joint, Binarised Feature Vectors&raquo; and slated to be submitted in mid-2013.</p>
         </div>
 
         <div class="span3 no-border no-margin no-padding">
           <div class="span12 blue3 tile">
             <h3>Teaching</h3>
 
-            <p>In summer 2013, I co-teach the M.Sc. <span style="display:inline-block"><i class="icon-book icon-black"></i> <a href="#">Language Technology II</a></span> course together with <span style="display:inline-block"><i class="icon-user icon-black"></i> <a href="http://www.stanford.edu/~mjkay/">Martin Kay</a></span> and <span style="display:inline-block;"><i class="icon-user icon-black"></i> <a href="http://www.coli.uni-saarland.de/~magda/">Magdalena Wolska</a></span>.</p>
+            <p>In summer 2013, I co-teach the M.Sc. <span style="display:inline-block"><i class="icon-book icon-white"></i> <a href="#">Language Technology II</a></span> course together with <span style="display:inline-block"><i class="icon-user icon-white"></i> <a href="http://www.stanford.edu/~mjkay/">Martin Kay</a></span> and <span style="display:inline-block;"><i class="icon-user icon-white"></i> <a href="http://www.coli.uni-saarland.de/~magda/">Magdalena Wolska</a></span>.</p>
           </div>
 
           <div class="span12 orange tile" style="margin-left:0px;margin-top:9px;" id="next-meeting">
@@ -78,13 +78,13 @@
         <div class="span4 green1 tile" style="min-height:160px;">
           <h3>39 Publications</h3>
 
-          <p>See my publications/citations on <span style="display:inline-block"><i class="icon-search icon-white"></i> <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a></span>. A list of all publications is available for download in <span style="display:inline-block"><i class="icon-download icon-white"></i> <a href="bibliography.bib">BibTex format</a></span>. You can view a table with all publications by <a href="javascript:showPublications();">clicking here</a>.</p>
+          <p>See my publications/citations on <span style="display:inline-block"><i class="icon-search icon-white"></i> <a href="http://scholar.google.com/citations?hl=en&amp;user=FIkUVv4AAAAJ">Google Scholar</a></span>. A list of all publications is available for download in <span style="display:inline-block"><i class="icon-download icon-white"></i> <a href="bibliography.bib">BibTex format</a></span>. You can view a table with all publications by <span style="display:inline-block"><i class="icon-list icon-white"></i> <a href="javascript:showPublications();">clicking here</a></span>.</p>
         </div>
 
         <div class="span3 green2 tile" style="min-height:160px;">
           <h3>CV</h3>
 
-          <p>My Curriculum Vitae is <a href="mailto:cfedermann@gmail.com">available on request</a> as PDF or DOC.</p>
+          <p>My Curriculum Vitae is available as PDF or DOC <span style="display:inline-block"><i class="icon-envelope icon-white"></i> <a href="mailto:cfedermann@gmail.com">on request</a></span>. You can also <span style="display:inline-block"><i class="icon-plus-sign icon-white"></i> <a href="http://de.linkedin.com/in/cfedermann/">connect on LinkedIn</a></span>.</p>
         </div>
 
         <div class="span4 green3 tile" style="min-height:160px;">
@@ -375,7 +375,7 @@
       $("section#about .alert").alert('close');
     }
 
-    function setTileColor(tile, colorIndex, COLORS) {
+    function setTileColor(tile, colorIndex, COLORS, ICONS) {
       tile.addClass(COLORS[colorIndex]);
       tile.find("i[class^='icon-']").each(function(index) {
         if (ICONS[colorIndex] == 'white') {
@@ -411,8 +411,9 @@
       }
       else {
         var COLORS = ["yellow", "orange", "red", "purple", "black"];
+        var ICONS = ["black", "white", "white", "white", "white"];
         var colorIndex = Math.floor(Math.random() * COLORS.length);
-        setTileColor($("#next-meeting"), colorIndex, COLORS);
+        setTileColor($("#next-meeting"), colorIndex, COLORS, ICONS);
       }
     });
 
