@@ -362,9 +362,11 @@
     <script>
     <!--
     var COLORS = ["blue1", "blue2", "blue3", "green1", "green2", "green3",
-      "yellow", "orange", "black", "purple", "red"];
+      "orange", "red", "purple"];
+//      "yellow", "orange", "black", "purple", "red"];
     var ICONS = ["white", "white", "white", "white", "white", "white",
-      "black", "white", "white", "white", "white"];
+      "white", "white", "purple"];
+//      "black", "white", "white", "white", "white"];
 
     function showPublications() {
       $("#publications").show();
@@ -400,7 +402,7 @@
 
       var startIndex = Math.floor(Math.random() * COLORS.length);
       tiles.each(function(index) {
-        var colorIndex = (startIndex+index) % COLORS.length;
+        colorIndex = (startIndex+index) % COLORS.length;
         setTileColor($(this), colorIndex);
       });
     });

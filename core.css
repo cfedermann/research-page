@@ -29,12 +29,12 @@ body {
 .black { background-color:black;color:white; } /*dimgray*/
 .black a { color:darkgray; } /*black*/
 
-.blue1 { background-color:dodgerblue;color:white; }
-.blue1 a { color:darkblue; }
-.blue2 { background-color:darkblue;color:white; }
+.blue1 { background-color:darkblue;color:white; }
+.blue1 a { color:lightskyblue; }
+.blue2 { background-color:royalblue;color:white; }
 .blue2 a { color:lightskyblue; }
-.blue3 { background-color:royalblue;color:white; }
-.blue3 a { color:lightskyblue; }
+.blue3 { background-color:dodgerblue;color:white; }
+.blue3 a { color:mediumblue; }
 
 .green1 { background-color:green; color:white; }
 .green1 a { color:greenyellow; }
@@ -50,7 +50,7 @@ body {
 .purple a { color:mediumpurple; }
 
 .red { background-color:darkred;color:white; }
-.red a { color:red;}
+.red a { color:crimson;}
 
 .yellow { background-color:yellow;color:black; }
 .yellow a { color:darkorange; }
