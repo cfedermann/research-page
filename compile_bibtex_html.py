@@ -43,6 +43,15 @@ PUBLISHED_TEMPLATE = '''                <tr>
                   </td>
                 </tr>'''
 
+# Template for published publications without URL.
+PUBLISHED_TEMPLATE_WITHOUT_URL = '''                <tr>
+                  <td>{0[number]}</td>
+                  <td>
+                    <p>{0[entry].fields[title]}<br/><strong><small>{0[authors]}</small></strong><br/><small>{0[entry].fields[booktitle]}, {0[entry].fields[address]}, {0[entry].fields[month]} {0[entry].fields[year]}</small></p>
+                  </td>
+                </tr>'''
+
+
 # Template for book publications.
 BOOK_TEMPLATE = '''                <tr>
                   <td>{0[number]}</td>
@@ -87,6 +96,8 @@ if __name__ == "__main__":
             template = ACCEPTED_TEMPLATE
         elif _entry.persons.has_key('editor'):
             template = BOOK_TEMPLATE
+        elif not _entry.fields.has_key('url'):
+            template = PUBLISHED_TEMPLATE_WITHOUT_URL
         
         try:
             formatted = template.format(_data).replace('&', '&amp;')
