@@ -23,6 +23,9 @@ TEX2TEXT = {
  '\\"{U}': '&Uuml;',
  "\\'{c}": '&cacute;',
  "\\'{e}": '&eacute;',
+ "\\v{c}": '&ccaron;',
+ "\\v{e}": '&ecaron;',
+ "\\v{r}": '&rcaron;',
  '{': '',
  '}': '',
 }
